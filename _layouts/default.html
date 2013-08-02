@@ -1,0 +1,12 @@
+<html>
+<head>
+<title>Stories</title>
+</head>
+<body>
+<ul>
+  {% for post in site.posts limit:5 %}
+    <li ><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+</body>
+</html>
