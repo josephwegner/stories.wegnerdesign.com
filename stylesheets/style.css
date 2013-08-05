@@ -3,7 +3,14 @@ body {
 	font-size: 16px;
 	font-family: serif;
 	background-color: #ececec;
+	transition: background-color 1s, color 1s;
+	color: #121212;
 }
+body.dark {
+	background-color: #03030c;
+	color: #d6d6d6;
+}
+
 #header {
 	height: 100%;
 	width: 100%;
@@ -40,6 +47,21 @@ h1 {
 	line-height: 1.5em;
 	width: 36em;
 	margin: auto;
-	color: #121212;
 	font-family: 'Droid Serif', serif;
+}
+
+#body p:last-child {
+	margin-bottom: 0;
+	padding-bottom: 30px;
+}
+
+#footer {
+	background: url("/images/bg.png");
+	position: relative;
+}
+
+div.dark {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
 }

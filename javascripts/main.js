@@ -5,22 +5,22 @@ $(document).ready(function() {
 	var scrollBreak = $("#floatHeader").height() - parseInt($("#floatHeader").css('padding-bottom')) - 1;
 	var scrollFinish = $("#header").height() - $("h1").height();
 
-	$(window).scroll(function() {
+	$(window).scroll(function(e) {
 		scrolled = true;
 		var newScroll = $(window).scrollTop();
 
-			var percent = (newScroll - scrollBreak) / (scrollFinish - scrollBreak);
-			if(percent <= 1) {
-				var padding = percent * 40;
-				$("#body").css('padding-top', padding);
-			}
+		var percent = (newScroll - scrollBreak) / (scrollFinish - scrollBreak);
+		if(percent <= 1) {
+			var padding = percent * 40;
+			$("#body").css('padding-top', padding);
+		}
 
 		if(newScroll > scrollBreak && newScroll < scrollFinish) {
 			$("#floatHeader").css({
 				'top': (newScroll - scrollBreak) * -1,
 				'box-shadow': 'none'
 			});
-			var passed = false;
+			passed = false;
 			before = false;
 		} else if(!passed && newScroll > scrollFinish) {
 			$("#floatHeader").css({
@@ -41,4 +41,14 @@ $(document).ready(function() {
 			});
 		}
 	}, 500);
+
+	var dark = $(".dark")[0];
+	var darkWatch = scrollMonitor.create(dark, {top: $("h1").height(), bottom: ($("h1").height() + 10) * -1});
+
+	darkWatch.fullyEnterViewport(function() {
+		$("body").addClass("dark");
+	});
+	darkWatch.exitViewport(function() {
+		$("body").removeClass("dark");
+	})
 });
