@@ -3,8 +3,4 @@ description: "Short Stories, by a nerd."
 url: http://stories.wegnerdesign.com
 safe: true
 lsi: false
-pygments: true
-paginate: 10
-auto: true
-markdown: redcarpet
 permalink: /:title
