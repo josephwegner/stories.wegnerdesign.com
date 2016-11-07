@@ -62,3 +62,14 @@ div.dark {
 	padding-bottom: 10px;
 	box-sizing: border-box;
 }
+
+#disqus_thread {
+    max-width: 80%;
+    width: 36em;
+    font-size: 21px;
+    margin: auto;
+}
+
+.discovery-main {
+    display: none;
+}
